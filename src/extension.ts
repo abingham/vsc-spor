@@ -14,14 +14,15 @@ export function activate(context: vscode.ExtensionContext) {
 		vscode.window.visibleTextEditors.forEach(editor => {
 			// TODO: The location of the spor executable needs to be configurable.
 			// TODO: This needs to be executed in the directory containing the file
-			const list = spawn('/Users/abingham/repos/spor/rust_spor/target/debug/spor', ['list', '--json', editor.document.fileName]);
+			const list = spawn('spor', ['list', '--json', editor.document.fileName]);
 
 			// TODO: Do we get the output piecemeal here, or all of it at the end of execution?
-			list.stdout.on('data', (data) => {
+			list.stdout.on('data', (data: string) => {
 				const anchors = JSON.parse(data);
 				const decs: vscode.Range[] = [];
 				anchors.forEach(anchor_obj => {
 					const anchor = anchor_obj.anchor;
+					// TODO: Need to convert context offset into line/col for the range here.
 					decs.push(new Range(1, anchor.context.offset, 1, anchor.context.offset + anchor.context.topic.length));
 				});
 
