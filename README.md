@@ -1,22 +1,26 @@
-# spor README
+# spor 
 
-This is the README for your extension "spor". After writing up a brief description, we recommend including the following sections.
+VS Code extension for interacting with [spor](https://github.com/abingham/rust_spor) anchored metadata.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### Working
 
-For example if there is an image subfolder under your extension project workspace:
+* Visualize anchors in open files with the `spor.highlight_anchors` command.
 
-\!\[feature X\]\(images/feature-x.png\)
+### Future
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+* View/edit metadata
+* Create/edit/delete anchors
+* Update anchors
+* Visualize "out of date" anchors
+  * Perhaps provided a listing of them in a window
 
 ## Requirements
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+This requires a spor executable be available. 
 
-## Extension Settings
+<!-- ## Extension Settings
 
 Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
 
@@ -62,4 +66,4 @@ Added features X, Y, and Z.
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
+**Enjoy!** -->
